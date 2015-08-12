@@ -12,7 +12,12 @@ import crop.dao.TechCardsDao;
 import crop.domain.TechCards;
 
 @Repository
-public class TechCardsDaoImpl implements TechCardsDao {
+public class TechCardsDaoImpl  extends BaseDaoImpl<TechCards, Long> implements TechCardsDao {
+
+	public TechCardsDaoImpl(Class<TechCards> entityClass) {
+		super(entityClass);
+		// TODO Auto-generated constructor stub
+	}
 
 	@PersistenceContext(unitName = "Primary")
 	private EntityManager em;
@@ -25,37 +30,7 @@ public class TechCardsDaoImpl implements TechCardsDao {
 		this.em = em;
 	}
 
-	@Transactional
-	public void addTechCards(TechCards techCards) {
-		em.persist(techCards);
-
-	}
-
-	@Transactional
-	public void updateTechCards(TechCards techCards) {
-		em.merge(techCards);
-
-	}
-
-	@Transactional
-	public TechCards getTechCardsById(int id) {
-		return  (TechCards) em.createNamedQuery("TechCards.getTCById").setParameter("id", id).getSingleResult();
-		
-		
-	}
-
-	@Transactional
-	public List<TechCards> getAllTechCards() {
-		return em.createQuery("from TechCards").getResultList();
-		
-	}
-
-	@Transactional
-	public void deleteTechCards(TechCards techCards) {
-		em.remove(techCards);
-
-	}
-
+	
 	
 
 }

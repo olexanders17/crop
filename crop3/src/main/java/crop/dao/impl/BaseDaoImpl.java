@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 
 import org.hibernate.metamodel.source.annotations.entity.EntityClass;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import crop.dao.BaseDao;
 
@@ -32,32 +33,37 @@ public class BaseDaoImpl<E, N> implements BaseDao<E, N> {
 	}
 
 	@Override
+	@Transactional
 	public void add(E entity) {
 		em.persist(entity);
 
 	}
 
 	@Override
+	@Transactional
 	public void update(E entity) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
+	@Transactional
 	public E getById(N id) {
 		return (E) em.createQuery("select from" + entityClass.getSimpleName() + " e where e.id=:id").setParameter(1, id).getSingleResult();
 
 	}
 
 	@Override
+	@Transactional
 	public List<E> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return  em.createQuery("from" + entityClass.getSimpleName()).getResultList() ;
 	}
 
 	@Override
+	@Transactional
 	public void delete(E entity) {
-		// TODO Auto-generated method stub
+		em.remove(em.merge(entity));
 
 	}
 

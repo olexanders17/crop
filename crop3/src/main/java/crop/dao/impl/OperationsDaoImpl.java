@@ -13,7 +13,7 @@ import crop.domain.Operations;
 import crop.domain.TechCards;
 
 @Repository
-public class OperationsDaoImpl implements OperationsDao {
+public class OperationsDaoImpl  extends BaseDaoImpl<Operations, Long> implements OperationsDao  {
 
 	@PersistenceContext(unitName = "Primary")
 	private EntityManager em;
@@ -26,34 +26,12 @@ public class OperationsDaoImpl implements OperationsDao {
 		this.em = em;
 	}
 
-	@Transactional
-	public void addOperations(Operations operations) {
-		em.persist(operations);
-
+	public OperationsDaoImpl(Class<Operations> entityClass) {
+		super(entityClass);
 	}
 
-	@Transactional
-	public void updateOperations(Operations operations) {
-		em.merge(operations);
-
-	}
-
-	@Transactional
-	public Operations getOperationsById(int id) {		
-		return em.find(Operations.class, id);
-		 
-	}
-
-	@Transactional
-	public List<Operations> getAllOperations() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
-	@Transactional
-	public void deleteOperations(Operations operations) {
-		em.remove(em.merge(operations));
+	
 
-	}
 
 }

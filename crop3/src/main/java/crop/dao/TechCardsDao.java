@@ -4,14 +4,23 @@ import java.util.List;
 
 import crop.domain.TechCards;
 
-public interface TechCardsDao {
+public interface TechCardsDao extends BaseDao<TechCards,  Long> {
 
-	public void addTechCards (TechCards techCards);
-	public void updateTechCards (TechCards techCards);
-	public TechCards getTechCardsById(int id);
-	public List<TechCards> getAllTechCards() ;
-	public void deleteTechCards (TechCards techCards);
-	
+	@Override
+	void add(TechCards entity);
+
+	@Override
+	void update(TechCards entity);
+
+	@Override
+	TechCards getById(Long id);
+
+	@Override
+	List<TechCards> getAll();
+
+	@Override
+	void delete(TechCards entity);
+
 	
 	
 }

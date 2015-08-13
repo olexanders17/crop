@@ -27,7 +27,7 @@ public class TechCardsServiceImpl implements TechCardsService {
 		Calendar operationDate= new GregorianCalendar(year, month-1, day);
 		
 		TechCards techCards = new TechCards(field, operationDate, operations, inputs, applicationRate, hectaresApplied, totalQuantity, totalUah);
-		techCardsDao.addTechCards(techCards);
+	//	techCardsDao.addTechCards(techCards);
 
 	}
 

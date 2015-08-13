@@ -16,6 +16,10 @@ public class BaseDaoImpl<E, N> implements BaseDao<E, N> {
 
 	private Class<E> entityClass;
 
+	public BaseDaoImpl() {
+		this.entityClass = entityClass;
+	}
+	
 	public BaseDaoImpl(Class<E> entityClass) {
 		super();
 		this.entityClass = entityClass;
@@ -54,10 +58,11 @@ public class BaseDaoImpl<E, N> implements BaseDao<E, N> {
 	}
 
 	@Override
+	@SuppressWarnings("unchecked") 
 	@Transactional
 	public List<E> getAll() {
 		
-		return  em.createQuery("from" + entityClass.getSimpleName()).getResultList() ;
+		return  em.createQuery("from " + entityClass.getSimpleName()).getResultList() ;
 	}
 
 	@Override

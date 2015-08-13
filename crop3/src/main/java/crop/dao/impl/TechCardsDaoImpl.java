@@ -21,6 +21,10 @@ public class TechCardsDaoImpl  extends BaseDaoImpl<TechCards, Long> implements T
 
 	@PersistenceContext(unitName = "Primary")
 	private EntityManager em;
+	
+	public TechCardsDaoImpl() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public EntityManager getEm() {
 		return em;

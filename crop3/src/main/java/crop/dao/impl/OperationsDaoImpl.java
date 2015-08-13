@@ -18,6 +18,10 @@ public class OperationsDaoImpl  extends BaseDaoImpl<Operations, Long> implements
 	@PersistenceContext(unitName = "Primary")
 	private EntityManager em;
 
+	
+	public OperationsDaoImpl() {
+		// TODO Auto-generated constructor stub
+	}
 	public EntityManager getEm() {
 		return em;
 	}

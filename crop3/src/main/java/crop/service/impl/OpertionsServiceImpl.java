@@ -17,7 +17,7 @@ public class OpertionsServiceImpl implements OperaionsService {
 
 	public void addOperations(String type) {
 		Operations operations = new Operations(type);
-		operationsDao.addOperations(operations);
+		//operationsDao.addOperations(operations);
 
 	}
 
@@ -38,8 +38,8 @@ public class OpertionsServiceImpl implements OperaionsService {
 
 	public void deleteOperations(int id) {
 
-		Operations operationsToDelete = operationsDao.getOperationsById(id);
-		operationsDao.deleteOperations(operationsToDelete);
+//		Operations operationsToDelete = operationsDao.getOperationsById(id);
+//		operationsDao.deleteOperations(operationsToDelete);
 		
 
 	}

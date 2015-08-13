@@ -16,16 +16,20 @@ public class PricesServiceImpl implements PricesService {
 	@Autowired
 	private PricesDao dao;
 
+	public PricesServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public void insertPrices(String priceTypeName, Inputs inputs, double vatRate, double uahExcVat) {
 
 		Prices prices = new Prices(priceTypeName, inputs, vatRate, uahExcVat);
-		dao.insertPrices(prices);
+		// dao.insertPrices(prices);
 
 	}
 
 	public List<Prices> getAllPrices() {
 
-		return dao.getAllPrices();
+		return dao.getAll();
 	}
 
 	public Prices findById(int id) {

@@ -14,10 +14,11 @@ import crop.domain.Prices;
 @Repository
 public class PricesDaoImpl extends BaseDaoImpl<Prices, Long> implements PricesDao {
 
-	public PricesDaoImpl(Class<Prices> entityClass) {
-		super(entityClass);
-		// TODO Auto-generated constructor stub
+	public PricesDaoImpl() {
+     super(Prices.class)	;	
 	}
+	
+
 
 	@Override
 	public void add(Prices entity) {

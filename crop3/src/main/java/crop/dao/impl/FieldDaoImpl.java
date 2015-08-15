@@ -5,25 +5,24 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import crop.dao.OperationsDao;
-import crop.domain.Operations;
+import crop.dao.FieldDao;
+import crop.domain.Field;
 
 @Repository
-public class OperationsDaoImpl  extends BaseDaoImpl<Operations, Long> implements OperationsDao  {
+public class FieldDaoImpl extends BaseDaoImpl<Field, Long>implements FieldDao {
 
 	@PersistenceContext(unitName = "Primary")
 	private EntityManager em;
 
-	public OperationsDaoImpl() {
-	
+	public FieldDaoImpl() {
+	super(Field.class);
 	}
 	
-	public OperationsDaoImpl(Class<Operations> entityClass) {
+	
+	public FieldDaoImpl(Class<Field> entityClass) {
 		super(entityClass);
 	}
-	
-	
-	
+
 	public EntityManager getEm() {
 		return em;
 	}
@@ -31,11 +30,5 @@ public class OperationsDaoImpl  extends BaseDaoImpl<Operations, Long> implements
 	public void setEm(EntityManager em) {
 		this.em = em;
 	}
-
-
-
-	
-	
-
 
 }

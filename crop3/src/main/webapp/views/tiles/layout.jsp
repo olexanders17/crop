@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Layout Title</title>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
-<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- Optional theme -->
@@ -24,29 +25,26 @@
 		<div class="row" name="top">
 			<div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 " style="background-color: #white; border-color: #676A6C; color: #676a6c;">
 				<div>
+					<!-- 					header page -->
 					<tiles:insertAttribute name="header">
 					</tiles:insertAttribute>
 				</div>
 			</div>
 		</div>
 
-		<div class="row" name="mid" >
-<!-- 			<div class="col-lg-2 col-md-2 col-sm-2  col-xs-2" style="background-color: #2f4050; color: #A7B1C2">Manu</div> -->
+		<div class="row" name="mid">
+			<!-- 			<div class="col-lg-2 col-md-2 col-sm-2  col-xs-2" style="background-color: #2f4050; color: #A7B1C2">Manu</div> -->
 			<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 " style="background-color: white; color: black;">
-				<br>
-				Request result <br>
+				<!--                body page -->
 				<div>
 					<tiles:insertAttribute name="body">
 					</tiles:insertAttribute>
 				</div>
 
-
 			</div>
 		</div>
 
-<!-- 		<div class="row" name="bot"> -->
-<!-- 			<div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 " style="background-color: #white; border-color: #676A6C; color: #676a6c;">footerr</div> -->
-<!-- 		</div> -->
+
 
 
 	</div>

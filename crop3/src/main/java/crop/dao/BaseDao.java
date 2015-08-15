@@ -12,3 +12,4 @@ public interface BaseDao<E, N> {
 	List<E> getAll();
 	void delete(E entity);
 }
+ 

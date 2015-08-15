@@ -12,7 +12,11 @@ import crop.dao.TechCardsDao;
 import crop.domain.TechCards;
 
 @Repository
-public class TechCardsDaoImpl  extends BaseDaoImpl<TechCards, Long> implements TechCardsDao {
+public class TechCardsDaoImpl extends BaseDaoImpl<TechCards, Long>implements TechCardsDao {
+
+	public TechCardsDaoImpl() {
+
+	}
 
 	public TechCardsDaoImpl(Class<TechCards> entityClass) {
 		super(entityClass);
@@ -21,10 +25,6 @@ public class TechCardsDaoImpl  extends BaseDaoImpl<TechCards, Long> implements T
 
 	@PersistenceContext(unitName = "Primary")
 	private EntityManager em;
-	
-	public TechCardsDaoImpl() {
-		// TODO Auto-generated constructor stub
-	}
 
 	public EntityManager getEm() {
 		return em;
@@ -33,8 +33,5 @@ public class TechCardsDaoImpl  extends BaseDaoImpl<TechCards, Long> implements T
 	public void setEm(EntityManager em) {
 		this.em = em;
 	}
-
-	
-	
 
 }

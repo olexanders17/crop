@@ -17,7 +17,8 @@ public class BaseDaoImpl<E, N> implements BaseDao<E, N> {
 	private Class<E> entityClass;
 
 	public BaseDaoImpl() {
-		this.entityClass = entityClass;
+//		super();
+//		this.entityClass = entityClass;
 	}
 	
 	public BaseDaoImpl(Class<E> entityClass) {

@@ -15,9 +15,9 @@ import crop.domain.Prices;
 public class PricesDaoImpl extends BaseDaoImpl<Prices, Long> implements PricesDao {
 
 	public PricesDaoImpl() {
-     super(Prices.class)	;	
+		super(Prices.class);
 	}
-	
+
 
 
 	@Override
@@ -49,7 +49,5 @@ public class PricesDaoImpl extends BaseDaoImpl<Prices, Long> implements PricesDa
 		// TODO Auto-generated method stub
 		super.delete(entity);
 	}
-
-
 
 }

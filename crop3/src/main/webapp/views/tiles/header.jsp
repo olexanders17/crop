@@ -5,14 +5,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 	<div class="container">
-		<div class="row">LOGO</div>
+<!-- 		<div class="row">LOGO</div> -->
 
 		<div class="row" name="top">
+			
+			
 			<div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
 				<!-- 				Header -->
 				<div class="btn-group">
@@ -21,7 +32,7 @@
 					<ul class="dropdown-menu ">
 						<li><a href="#">ADD</a></li>
 						<li><a href="#">DELETE</a></li>
-						<li><a href="#">GET ALL</a></li>
+						<li><a href="showAllPrices">GET ALL</a></li>
 						<li><a href="#">GET BY ID</a></li>
 						<li><a href="#">UPDATE</a></li>
 					</ul>

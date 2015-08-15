@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Start page</title>
 </head>
 <body>
-	Hello
-
+	
+	<%@ include file="/views/tiles/header.jsp"%>
 	<a href="showAllPrices">Show All Authors</a>
 
-	</body>
+</body>
 </html>

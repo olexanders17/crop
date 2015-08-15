@@ -6,14 +6,12 @@
 
 <tiles-definitions>
 	<definition name="base.definition" template="/views/tiles/layout.jsp">
-<!-- 		<put-attribute name="header" value="/views/tiles/header.jsp"></put-attribute> -->
-<!-- 		<put-attribute name="footer" value="/views/tiles/footer.jsp"></put-attribute> -->
-		<put-attribute name="body" value=""></put-attribute>
+		<put-attribute name="header" value="/views/tiles/header.jsp"></put-attribute>
+		<put-attribute name="body" value="/views/tiles/body_default.jsp"></put-attribute>
 	</definition>
 
 	<definition name="prices-list" extends="base.definition">
 		<put-attribute name="body" value="/views/prices-list.jsp"></put-attribute>
-
 	</definition>
 
 

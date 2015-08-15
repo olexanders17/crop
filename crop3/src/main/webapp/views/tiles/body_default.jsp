@@ -7,9 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<!-- <div style="background-color: green;" >  footer  </div> -->
-
-
+This is default body
 </body>
 </html>

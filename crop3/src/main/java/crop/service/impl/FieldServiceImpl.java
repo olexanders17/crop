@@ -22,4 +22,18 @@ public class FieldServiceImpl implements FieldService {
 		return dao.getAll();
 	}
 
+	@Override
+	public void delete(Long id) {
+
+		dao.delete(dao.getById(id));
+
+	}
+
+	@Override
+	public void update(long id, String code, String oblast, String rajon, String village, double areaTotal, double areaPlanted) {
+		Field itemToUpdate = new Field(code, oblast, rajon, village, areaTotal, areaPlanted);
+		dao.update(itemToUpdate);
+
+	}
+
 }

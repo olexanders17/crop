@@ -8,15 +8,18 @@
 <title>Field Get ALL</title>
 </head>
 <body>
-	<a3 class="btn btn-success">Table. List of all fields </a3>
+	<a3 class="btn btn-default">Table. List of all fields </a3>
+	<br>
 	<br>
 
 
-	
+	<div class="conratiner">
+
 
 		<table class="table  table-condensed table-striped  " style="width: 90%">
 			<thead>
 				<tr>
+					<td>id</td>
 					<td>code</td>
 					<td>oblast</td>
 					<td>rajon</td>
@@ -28,27 +31,30 @@
 			</thead>
 
 			<tbody>
-	<c:forEach var="item" items="${fieldList}">
-				<tr>
-					<td>${item.code}</td>
-					<td>${item.oblast}</td>
-					<td>${item.rajon}</td>
-					<td>${item.village}</td>
-					<td>${item.areaTotal}</td>
-					<td>${item.areaPlanted}</td>
-				</tr>
-	
-	</c:forEach>
-	
+				<c:forEach var="item" items="${fieldList}">
+					<tr>
+						<td>${item.id}</td>
+						<td>${item.code}</td>
+						<td>${item.oblast}</td>
+						<td>${item.rajon}</td>
+						<td>${item.village}</td>
+						<td>${item.areaTotal}</td>
+						<td>${item.areaPlanted}</td>
+					</tr>
+
+				</c:forEach>
+
 			</tbody>
 
 
 		</table>
 
+		<br>
+		<hr class="btn-warning" style="width: 90%;" align="left">
 
-	
+		<a href="fieldEdit" class="btn btn-warning">EDIT FIELDS</a>
 
-
+	</div>
 
 </body>
 </html>

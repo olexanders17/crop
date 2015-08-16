@@ -17,10 +17,10 @@ public class BaseDaoImpl<E, N> implements BaseDao<E, N> {
 	private Class<E> entityClass;
 
 	public BaseDaoImpl() {
-//		super();
-//		this.entityClass = entityClass;
+		// super();
+		// this.entityClass = entityClass;
 	}
-	
+
 	public BaseDaoImpl(Class<E> entityClass) {
 		super();
 		this.entityClass = entityClass;
@@ -47,23 +47,22 @@ public class BaseDaoImpl<E, N> implements BaseDao<E, N> {
 	@Override
 	@Transactional
 	public void update(E entity) {
-		// TODO Auto-generated method stub
+		em.merge(entity);
 
 	}
 
 	@Override
 	@Transactional
 	public E getById(N id) {
-		return (E) em.createQuery("select from" + entityClass.getSimpleName() + " e where e.id=:id").setParameter(1, id).getSingleResult();
+		return (E) em.createQuery("select e from " + entityClass.getSimpleName() + " e where e.id = :id").setParameter("id", id).getSingleResult();
 
 	}
 
 	@Override
-	@SuppressWarnings("unchecked") 
 	@Transactional
 	public List<E> getAll() {
-		
-		return  em.createQuery("from " + entityClass.getSimpleName()).getResultList() ;
+
+		return em.createQuery("from " + entityClass.getSimpleName()).getResultList();
 	}
 
 	@Override

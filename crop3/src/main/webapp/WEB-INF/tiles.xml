@@ -18,5 +18,9 @@
 		<put-attribute name="body" value="/views/field/field_getAll.jsp"></put-attribute>
 	</definition>
 
+	<definition name="field_change" extends="base.definition">
+		<put-attribute name="body" value="/views/field/field_change.jsp"></put-attribute>
+	</definition>
+
 
 </tiles-definitions>

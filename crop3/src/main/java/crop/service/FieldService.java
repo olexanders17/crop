@@ -7,13 +7,12 @@ import crop.domain.Prices;
 
 public interface FieldService {
 
-	
-//	void add(Prices entity);	
-//	void update(Prices entity);	
-//	Prices getById(Long id);	
-	
-	List<Field> getAll();	
-	
-//	void delete(Prices entity);
+	// void add(Prices entity);
+	void update(long id, String code, String oblast, String rajon, String village, double areaTotal, double areaPlanted);
+	// Prices getById(Long id);
+
+	List<Field> getAll();
+
+	void delete(Long id);
 
 }

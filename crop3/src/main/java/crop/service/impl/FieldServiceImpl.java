@@ -36,4 +36,10 @@ public class FieldServiceImpl implements FieldService {
 
 	}
 
+	@Override
+	public void add(String code, String oblast, String rajon, String village, double areaTotal, double areaPlanted) {
+		dao.add(new Field(code, oblast, rajon, village, areaTotal, areaPlanted));
+
+	}
+
 }

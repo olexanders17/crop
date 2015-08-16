@@ -59,7 +59,7 @@
 					<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown""> FIELDS <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu ">
-						<li><a href="#">ADD</a></li>
+						<li><a href="fieldAddForm">ADD</a></li>
 						<li><a href="#">DELETE</a></li>
 						<li><a href="fieldGetAll">GET ALL</a></li>
 						<li><a href="#">GET BY ID</a></li>

@@ -22,5 +22,8 @@
 		<put-attribute name="body" value="/views/field/field_change.jsp"></put-attribute>
 	</definition>
 
+	<definition name="field_add" extends="base.definition">
+		<put-attribute name="body" value="/views/field/field_add.jsp"></put-attribute>
+	</definition>
 
 </tiles-definitions>

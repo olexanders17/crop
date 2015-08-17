@@ -18,6 +18,10 @@
 		<put-attribute name="body" value="/views/field/field_getAll.jsp"></put-attribute>
 	</definition>
 
+	<definition name="field-data-table" extends="base.definition">
+		<put-attribute name="body" value="/views/field/field-data-table.jsp"></put-attribute>
+	</definition>
+
 	<definition name="field_change" extends="base.definition">
 		<put-attribute name="body" value="/views/field/field_change.jsp"></put-attribute>
 	</definition>
@@ -25,5 +29,8 @@
 	<definition name="field_add" extends="base.definition">
 		<put-attribute name="body" value="/views/field/field_add.jsp"></put-attribute>
 	</definition>
+	
+	
+
 
 </tiles-definitions>

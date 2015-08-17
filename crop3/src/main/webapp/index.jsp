@@ -21,7 +21,7 @@
 <body>
 
 	<%@ include file="/views/tiles/header.jsp"%>
-	<a href="showAllPrices">Show All Authors</a>
+	
 
 </body>
 </html>

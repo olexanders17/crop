@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import crop.dao.FieldDao;
 import crop.domain.Field;
-import crop.domain.Prices;
 import crop.service.FieldService;
 
 @Service("FieldService")
@@ -31,7 +30,17 @@ public class FieldServiceImpl implements FieldService {
 
 	@Override
 	public void update(long id, String code, String oblast, String rajon, String village, double areaTotal, double areaPlanted) {
-		Field itemToUpdate = new Field(code, oblast, rajon, village, areaTotal, areaPlanted);
+		//Field itemToUpdate = new Field(code, oblast, rajon, village, areaTotal, areaPlanted);
+		
+		
+		Field itemToUpdate = dao.getById(id);
+		itemToUpdate.setCode(code);
+		itemToUpdate.setOblast(oblast);
+		itemToUpdate.setRajon(rajon);
+		itemToUpdate.setVillage(village);
+		itemToUpdate.setAreaTotal(areaTotal);
+		itemToUpdate.setAreaPlanted(areaPlanted);		
+		
 		dao.update(itemToUpdate);
 
 	}

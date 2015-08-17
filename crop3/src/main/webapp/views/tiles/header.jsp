@@ -60,10 +60,11 @@
 					</a>
 					<ul class="dropdown-menu ">
 						<li><a href="fieldAddForm">ADD</a></li>
-						<li><a href="#">DELETE</a></li>
+<!-- 						<li><a href="#">DELETE</a></li> -->
 						<li><a href="fieldGetAll">GET ALL</a></li>
-						<li><a href="#">GET BY ID</a></li>
-						<li><a href="#">UPDATE</a></li>
+						<li><a href="fieldGetAllDataTable">DATATABLE</a></li>
+<!-- 						<li><a href="#">GET BY ID</a></li> -->
+						<li><a href="fieldEdit">EDIT</a></li>
 					</ul>
 				</div>
 

@@ -30,6 +30,17 @@ public class FieldController {
 		return "field_getAll";
 
 	}
+	
+
+	
+	@RequestMapping(value = "/fieldGetAllDataTable")
+	public String fieldGetAllDataTable(Model model) {
+
+		List<Field> list = service.getAll();
+		model.addAttribute("fieldList", list);
+		return "field-data-table";
+
+	}
 
 	@RequestMapping(value = "/fieldEdit")
 	public String editFiled(Model model) {
@@ -48,26 +59,33 @@ public class FieldController {
 
 		return "redirect:/fieldEdit";
 	}
+	
+	
+	@RequestMapping(value = "/fieldUpdate", method=RequestMethod.POST)
+	public String updateFiled(
+			@RequestParam(value="id") long id,
+			@RequestParam(value="code") String code,
+			@RequestParam(value="oblast") String oblast,
+			@RequestParam(value="rajon") String rajon,
+			@RequestParam(value="village") String village,
+			@RequestParam(value="areaTotal") double areaTotal,
+			@RequestParam(value="areaPlanted") double areaPlanted					
+			
+			) {
 
-	@RequestMapping(value = "/fieldUpdate")
-	public String updateFiled(Model modelm, HttpServletRequest req) {
-
-		Long idToUpdate = Long.parseLong(req.getParameter("id"));
-		//service.
-
+		//Long idToUpdate = Long.parseLong(req.getParameter("id"));
+		service.update(id, code, oblast, rajon, village, areaTotal, areaPlanted);
+		//service.add(code, oblast, rajon, village, areaTotal, areaPlanted);
 		return "redirect:/fieldEdit";
 	}
 
 
 	@RequestMapping(value = "/fieldAddForm")
-	public String addFilefForm() {
-
-		
+	public String addFilefForm() {		
 		return "field_add";
 	}
 
-	
-	
+		
 	
 	
 	
@@ -82,7 +100,7 @@ public class FieldController {
 			) 
 	{
 	
-	service.add(code, oblast, rajon, village, areaTotal, areaPlanted);;
+	service.add(code, oblast, rajon, village, areaTotal, areaPlanted);
 		
 
 		return "redirect:/fieldEdit";

@@ -20,12 +20,6 @@ public class PricesServiceImpl implements PricesService {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public void insertPrices(String priceTypeName, Inputs inputs, double vatRate, double uahExcVat) {
-
-		Prices prices = new Prices(priceTypeName, inputs, vatRate, uahExcVat);
-		// dao.insertPrices(prices);
-
-	}
 
 	public List<Prices> getAllPrices() {
 

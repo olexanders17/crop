@@ -2,15 +2,18 @@ package crop.service;
 
 import java.util.List;
 
+import crop.domain.Field;
 import crop.domain.Inputs;
 import crop.domain.Prices;
 
 public interface PricesService {
 
-	public void insertPrices(String priceTypeName, Inputs inputs, double vatRate, double uahExcVat);
+	void add();
 
-	public List<Prices> getAllPrices();
+	void update();
+	// Prices getById(Long id);
 
-	public Prices findById(int id);
+	List<Prices> getAll();
 
+	void delete(Long id);
 }

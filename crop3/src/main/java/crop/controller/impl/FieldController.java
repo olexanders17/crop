@@ -29,6 +29,7 @@ public class FieldController {
 		model.addAttribute("fieldList", list);
 		return "field_getAll";
 
+		
 	}
 	
 
@@ -107,7 +108,20 @@ public class FieldController {
 	}
 
 	
-	
-	
-	
+	//fieldChart
+	@RequestMapping(value = "fieldChart")
+	public String fieldChart1(Model model) {
+		List<Field> fieldList= service.getAll();
+		model.addAttribute("fieldChartData", fieldList);
+
+		
+		
+		return "field-chart";
+	}
+
 }
+
+
+
+
+

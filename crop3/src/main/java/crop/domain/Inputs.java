@@ -17,7 +17,7 @@ public class Inputs {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ID")
-	private int id;
+	private long id;
 
 	@Column(name = "NAME")
 	private String name;
@@ -34,6 +34,21 @@ public class Inputs {
 	public Inputs() {
 		// TODO Auto-generated constructor stub
 	}
+
+	
+	
+	
+	public Inputs(long id, String name, String unitMeasurmen, String inputClass, List<Prices> prices) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.unitMeasurmen = unitMeasurmen;
+		this.inputClass = inputClass;
+		this.prices = prices;
+	}
+
+
+
 
 	public Inputs(String name, String unitMeasurmen, String inputClass, String plName, String cfName,
 			List<Prices> prices) {
@@ -55,11 +70,11 @@ public class Inputs {
 		this.inputClass = inputClass;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

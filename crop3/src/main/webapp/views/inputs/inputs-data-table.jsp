@@ -33,7 +33,7 @@
 			</thead>
 
 			<tbody>
-				<c:forEach var="item" items="${pricesList}">
+				<c:forEach var="item" items="${inputsList}">
 					<tr>
 						<td>${item.priceTypeName}</td>
 						<td>${item.vatRate}</td>

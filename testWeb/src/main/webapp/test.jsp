@@ -1,3 +1,4 @@
+<%@page import="com.google.gson.Gson"%>
 <%@page import="oss.PersonClub"%>
 <%@page import="oss.Person"%>
 <%@page import="java.util.*"%>
@@ -13,11 +14,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	dsdsads
-	<%
-	PersonClub pk = new PersonClub();
-	List<Person> per = pk.getAllPersons();
-	pageContext.setAttribute("listPersons", per);
+	
+	<%	
+	Gson gson= new Gson();
+	String jsonPeson=gson.toJson(new PersonClub().getAllPersons());
+	//pageContext.setAttribute("listPersons", per);
 %>
 
 
@@ -25,14 +26,10 @@
 
 
 	<script type="text/javascript">
-	var myIt=[
-	<c:forEach var="item" items="${listPersons}">
-			  ${item.name}, 
+	var JSPerson;
+	JSPerson=JSON.parse(<%=jsonPeson%>);
 	
-        
-	
-	</c:forEach>
-	]
+	console.log(JSPerson[0].name);
 	</script>
 
 

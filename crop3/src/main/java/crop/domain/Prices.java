@@ -13,7 +13,7 @@ public class Prices {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 
 	@Column(name = "PRICE_TYPE_NAME")
 	private String priceTypeName;
@@ -55,6 +55,26 @@ public class Prices {
 		this.inputs = inputs;
 		this.vatRate = vatRate;
 		this.uahExcVat = uahExcVat;
+	}
+	
+	
+	
+	
+	
+
+	public Prices(String priceTypeName, double vatRate, double uahExcVat) {
+		super();
+		this.priceTypeName = priceTypeName;
+		this.vatRate = vatRate;
+		this.uahExcVat = uahExcVat;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getPriceTypeName() {

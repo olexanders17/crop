@@ -2,6 +2,8 @@ package crop.controller.impl;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,38 +16,80 @@ import crop.service.PricesService;
 
 @Controller
 public class PricesController {
-	
-	@Autowired
-	private PricesService pricesService;
-	
-	@RequestMapping(value="/showAllPrices")
-	public String  getAllPrices(Model model) {
-		
-		List<Prices> prices= pricesService.getAllPrices();
-		model.addAttribute("allPrices", prices);
-		return "prices-list";
-		
-	}
-	
-	@RequestMapping(value="new-price")
-	public String cretePricesPage(){
-		
-		return "prices-list";
-	}
-	
-	
-	@RequestMapping(value="/createPrices")
-	public String cratePrice (
-			@RequestParam(value="inputs")
-			String inputs,
-			@RequestParam(value="uahExcVat") 
-			double uahExcVat
-			) {
 
-		pricesService.insertPrices(inputs, null, 1.2, uahExcVat);
-		return "prices-list";
-		
+	@Autowired
+	private PricesService service;
+
+	@RequestMapping(value = "/pricesGetAll")
+	public String pricesGetAll(Model model) {
+
+		List<Prices> list = service.getAll();
+		model.addAttribute("pricesList", list);
+		return "prices_getAll";
+
 	}
+
+	@RequestMapping(value = "/pricesGetAllDataTable")
+	public String pricesGetAllDataTable(Model model) {
+
+		List<Prices> list = service.getAll();
+		model.addAttribute("pricesList", list);
+		return "prices-data-table";
+
+	}
+
+	@RequestMapping(value = "/pricesEdit")
+	public String editFiled(Model model) {
+
+		List<Prices> list = service.getAll();
+		model.addAttribute("pricesList", list);
+
+		return "prices_change";
+	}
+
+	@RequestMapping(value = "/pricesDelete")
+	public String deleteFiled(Model model, HttpServletRequest req) {
+
+		Long idToDelete = Long.parseLong(req.getParameter("id"));
+		service.delete(idToDelete);
+
+		return "redirect:/pricesEdit";
+	}
+
+	@RequestMapping(value = "/pricesUpdate", method = RequestMethod.POST)
+	public String updateFiled(
+			@RequestParam(value = "id") long id,
+			@RequestParam(value = "priceTypeName") String priceTypeName,
+			@RequestParam(value = "vatRate") double vatRate,
+			@RequestParam(value = "uahExcVat") double uahExcVat			
+
+	) {
+
+
+		service.update(id, priceTypeName,  vatRate, uahExcVat);
+		
+		return "redirect:/pricesEdit";
+	}
+
+	@RequestMapping(value = "/pricesAddForm")
+	public String addFilefForm() {
+		return "prices_add";
+	}
+
+	@RequestMapping(value = "/pricesAdd", method = RequestMethod.POST)
+	public String addFiledHandler(
+			@RequestParam(value = "priceTypeName") String priceTypeName,
+			@RequestParam(value = "vatRate") double vatRate,
+			@RequestParam(value = "uahExcVat") double uahExcVat
+			
+			)
+			{
+
+		service.add(priceTypeName,  vatRate, uahExcVat);
+
+		return "redirect:/pricesEdit";
+	}
+
 	
 
 }

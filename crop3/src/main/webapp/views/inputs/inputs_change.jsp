@@ -9,7 +9,7 @@
 <body>
 
 
-	<a3 class="btn btn-default">EDIT prices </a3>
+	<a3 class="btn btn-default">EDIT inputs </a3>
 	<br>
 	<br>
 
@@ -22,19 +22,25 @@
 
 
 
-	<core:forEach items="${pricesList}" var="item">
-<form action="pricesUpdate" method="post">
+	<core:forEach items="${inputsList}" var="item">
+
+<form action="inputsUpdate" method="post">
+
 		<input type="text" name="id" value="${item.id}" class="btn btn-default " readonly="readonly" >
-		<input type="text" name="priceTypeName" value="${item.priceTypeName}" class="btn btn-default">
-		<input type="text" name="vatRate" value="${item.vatRate}" class="btn btn-default">
-		<input type="text" name="uahExcVat" value="${item.uahExcVat}" class="btn btn-default">
+		<input type="text" name="unitMeasurmen" value="${item.unitMeasurmen}" class="btn btn-default">
+		<input type="text" name="inputClass" value="${item.inputClass}" class="btn btn-default">
+		
 		
 
 		<button  type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-ok"></span>
 		</button>
-		<a href="pricesDelete?id=${item.id}" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span>
-		</a>
+		<a href="inputsDelete?id=${item.id}" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span></a>
+		<a href="inputsDelete?id=${item.id}" class="btn btn-warning"> <span class="glyphicon glyphicon-pencil"></span></a>
+		
+		
 		<br>
+
+
 </form>
 	</core:forEach>
 

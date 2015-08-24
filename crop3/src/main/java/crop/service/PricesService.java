@@ -8,12 +8,13 @@ import crop.domain.Prices;
 
 public interface PricesService {
 
-	void add();
+	void add(String priceTypeName,  double vatRate, double uahExcVat);
 
-	void update();
+	void update(long id, String priceTypeName,  double vatRate, double uahExcVat);
 	// Prices getById(Long id);
 
 	List<Prices> getAll();
 
 	void delete(Long id);
+
 }

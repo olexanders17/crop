@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>prices Get ALL</title>
+<title>inputs Get ALL</title>
 </head>
 <body>
-	<a3 class="btn btn-default">Table. List of all prices </a3>
+	<a3 class="btn btn-default">Table. List of all inputs </a3>
 	<br>
 	<br>
 
@@ -30,7 +30,7 @@
 			</thead>
 
 			<tbody>
-				<c:forEach var="item" items="${pricesList}">
+				<c:forEach var="item" items="${inputsList}">
 					<tr>
 						<td>${item.priceTypeName}</td>
 						<td>${item.vatRate}</td>
@@ -48,7 +48,7 @@
 		<br>
 		<hr class="btn-warning" style="width: 90%;" align="left">
 
-		<a href="pricesEdit" class="btn btn-warning">EDIT pricesS</a>
+		<a href="inputsEdit" class="btn btn-warning">EDIT inputsS</a>
 
 	</div>
 

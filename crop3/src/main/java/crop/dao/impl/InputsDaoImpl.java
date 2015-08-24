@@ -5,26 +5,31 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import crop.dao.FieldDao;
+import crop.dao.InputsDao;
 import crop.domain.Field;
+import crop.domain.Inputs;
 
 @Repository
-public class FieldDaoImpl extends BaseDaoImpl<Field, Long>implements FieldDao {
+public class InputsDaoImpl extends BaseDaoImpl<Inputs, Long>implements InputsDao {
 
 	@PersistenceContext(unitName = "Primary")
 	private EntityManager em;
 
-	public FieldDaoImpl() {
-	super(Field.class);
+	public InputsDaoImpl() {
+		super(Inputs.class);
 	}
-	
-	
-	public FieldDaoImpl(Class<Field> entityClass) {
-		super(entityClass);
+
+	public InputsDaoImpl(Class<Inputs> entityClass) {
+		super(Inputs.class);
+
+	}
+
+	public InputsDaoImpl(EntityManager em) {
+		super();
+		this.em = em;
 	}
 
 	public EntityManager getEm() {
@@ -35,46 +40,39 @@ public class FieldDaoImpl extends BaseDaoImpl<Field, Long>implements FieldDao {
 		this.em = em;
 	}
 
-
 	@Override
 	@Transactional
-	public void add(Field entity) {
-		// TODO Auto-generated method stub
+	public void add(Inputs entity) {
+
 		super.add(entity);
 	}
 
-
 	@Override
 	@Transactional
-	public void update(Field entity) {
-		// TODO Auto-generated method stub
+	public void update(Inputs entity) {
+
 		super.update(entity);
 	}
 
-
 	@Override
 	@Transactional
-	public Field getById(Long id) {
-		// TODO Auto-generated method stub
+	public Inputs getById(Long id) {
+
 		return super.getById(id);
 	}
 
-
 	@Override
 	@Transactional
-	public List<Field> getAll() {
-		// TODO Auto-generated method stub
+	public List<Inputs> getAll() {
+
 		return super.getAll();
 	}
 
-
 	@Override
 	@Transactional
-	public void delete(Field entity) {
+	public void delete(Inputs entity) {
 		// TODO Auto-generated method stub
 		super.delete(entity);
 	}
 
-	
-	
 }

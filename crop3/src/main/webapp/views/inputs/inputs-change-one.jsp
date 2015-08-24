@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,26 +9,40 @@
 <body>
 
 
-	<a3 class="btn btn-default">ADD prices </a3>
+	<h3 class="btn btn-default">ADD inputs </h3>
 	<br>
 	<br>
 
 <div class="container-fluid" > 
 <div class="row" align="left"  > 
 
-	<form action="pricesAdd" method="post">
+	<form action="inputsAdd" method="post">
 	<div class="row" >
-	<div class="col-md-2"> <label class="btn btn-info btn-group-justified">PRICE_TYPE_NAME</label> </div>
+	<div class="col-md-2"> <label class="btn btn-info btn-group-justified">ID</label> </div>
+	<div class="col-md-2"><input type="text" name="id" value="${inputsToEdit.id}" class="btn btn-default"></div>
+	</div>
+	
+	<div class="row" >
+	<div class="col-md-2"> <label class="btn btn-info btn-group-justified">NAME</label> </div>
 	<div class="col-md-2"><input type="text" name="priceTypeName" class="btn btn-default"></div>
-	</div>	
+	</div>
+		
 	<div class="row" >
-	<div class="col-md-2"> <label class="btn btn-info btn-group-justified">VAT_RATE</label> </div>
+	<div class="col-md-2"> <label class="btn btn-info btn-group-justified">UNIT_MEASURMEN</label> </div>
 	<div class="col-md-2"> <input type="text" name="vatRate" class="btn btn-default"> </div>
 	</div>
 	<div class="row" >
-	<div class="col-md-2"><label class="btn btn-info btn-group-justified">UAH_EXC_VAT</label></div>
+	<div class="col-md-2"><label class="btn btn-info btn-group-justified">INPUT_CLASS</label></div>
 	<div class="col-md-2"> <input type="text" name="uahExcVat" class="btn btn-default"> </div>
 	</div>
+	<div class="row" >
+	<div class="col-md-2"><label class="btn btn-info btn-group-justified">INPUT_PRICES</label></div>
+	<div class="col-md-2"> <input type="text" name="uahExcVat" class="btn btn-default"> </div>
+	</div>
+
+
+
+
 	
 	
 	<div class="row" style="margin-top: 10px" >
@@ -38,6 +53,20 @@
 	</a>
 	</div>
 	</div>
+	
+	
+	<c:forEach var="item" items="">
+	
+	<input type="radio" value=""> 
+	
+	
+	
+	</c:forEach>
+	
+	
+	
+	
+	
 	</form>
 </div>
 </div>

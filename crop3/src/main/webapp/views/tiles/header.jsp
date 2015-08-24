@@ -22,11 +22,11 @@
 					<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown""> PRICES <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu ">
-						<li><a href="#">ADD</a></li>
-						<li><a href="#">DELETE</a></li>
-						<li><a href="showAllPrices">GET ALL</a></li>
-						<li><a href="#">GET BY ID</a></li>
-						<li><a href="#">UPDATE</a></li>
+						<li><a href="pricesAddForm">ADD</a></li>
+						<li><a href="pricesGetAll">GET ALL</a></li>
+						<li><a href="pricesGetAllDataTable">DATATABLE</a></li>
+						<li><a href="pricesEdit">EDIT</a></li>
+						<li><a href="pricesChart">CHART</a></li>
 					</ul>
 
 				</div>
@@ -47,11 +47,11 @@
 					<a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown""> INPUTS <span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu ">
-						<li><a href="#">ADD</a></li>
-						<li><a href="#">DELETE</a></li>
-						<li><a href="#">GET ALL</a></li>
-						<li><a href="#">GET BY ID</a></li>
-						<li><a href="#">UPDATE</a></li>
+						<li><a href="inputsAddForm">ADD</a></li>						
+						<li><a href="inputsGetAll">GET ALL</a></li>
+						<li><a href="inputsGetAllDataTable">DATATABLE</a></li>						
+						<li><a href="inputsEdit">EDIT</a></li>
+						<li><a href="inputsChart">CHART</a></li>
 					</ul>
 				</div>
 
@@ -65,6 +65,7 @@
 						<li><a href="fieldGetAllDataTable">DATATABLE</a></li>
 <!-- 						<li><a href="#">GET BY ID</a></li> -->
 						<li><a href="fieldEdit">EDIT</a></li>
+						<li><a href="fieldChart">CHART</a></li>
 					</ul>
 				</div>
 

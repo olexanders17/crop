@@ -4,7 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src=<core:url value='/resources/forms-util.js'/>>
+    
+</script>
 </head>
 <body>
 
@@ -13,35 +17,37 @@
 	<br>
 	<br>
 
-	<input type="text" name="id" value="ID" class="btn btn-info " >
+	<input type="text" name="id" value="ID" class="btn btn-info ">
 	<input type="text" name="priceTypeName" value="PRICE_TYPE_NAME" class="btn btn-info">
 	<input type="text" name="vatRate" value="VAT_RATE" class="btn btn-info">
-	<input type="text" name="uahExcVat" value="UAH_EXC_VAT" class="btn btn-info">
-	
+
+
 	<br>
 
 
 
 	<core:forEach items="${inputsList}" var="item">
 
-<form action="inputsUpdate" method="post">
+		<form id="form${item.id}" action="inputsUpdate" method="post" onsubmit="formChanger()">
 
-		<input type="text" name="id" value="${item.id}" class="btn btn-default " readonly="readonly" >
-		<input type="text" name="unitMeasurmen" value="${item.unitMeasurmen}" class="btn btn-default">
-		<input type="text" name="inputClass" value="${item.inputClass}" class="btn btn-default">
-		
-		
-
-		<button  type="submit" class="btn btn-success"> <span class="glyphicon glyphicon-ok"></span>
-		</button>
-		<a href="inputsDelete?id=${item.id}" class="btn btn-danger"> <span class="glyphicon glyphicon-remove"></span></a>
-		<a href="inputsDelete?id=${item.id}" class="btn btn-warning"> <span class="glyphicon glyphicon-pencil"></span></a>
-		
-		
-		<br>
+			<input type="text" name="id" value="${item.id}" class="btn btn-default " readonly="readonly"> <input type="text" name="unitMeasurmen" value="${item.unitMeasurmen}" class="btn btn-default">
+			<input type="text" name="inputClass" value="${item.inputClass}" class="btn btn-default">
 
 
-</form>
+
+			<button class="btn btn-success" name="inputsUpdate">
+				<span class="glyphicon glyphicon-ok"></span>
+			</button>
+			<button class="btn btn-danger" name="inputsDelete">
+				<span class="glyphicon glyphicon-remove"></span>
+			</button>
+			<button class="btn btn btn-warning" name="inputsEditOne">
+				<span class="glyphicon glyphicon glyphicon-pencil"></span>
+			</button>
+
+
+
+		</form>
 	</core:forEach>
 
 

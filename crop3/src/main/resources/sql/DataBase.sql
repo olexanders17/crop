@@ -614,3 +614,51 @@ INSERT INTO field(id,
              'Воскресінці');
 
 COMMIT;
+
+
+
+INSERT INTO inputs(`ID`,
+                   `INPUT_CLASS`,
+                   `NAME`,
+                   `UNIT_MEASURMEN`)
+     VALUES (6,
+             'Chemicals.Herbicide',
+             '(Chemicals) Acenit',
+             'Lit');INSERT INTO inputs(`ID`,
+                   `INPUT_CLASS`,
+                   `NAME`,
+                   `UNIT_MEASURMEN`)
+     VALUES (7,
+             'Chemicals.Herbicide',
+             '(Chemicals) Astrel Plus',
+             'Lit');INSERT INTO inputs(`ID`,
+                   `INPUT_CLASS`,
+                   `NAME`,
+                   `UNIT_MEASURMEN`)
+     VALUES (8,
+             'Chemicals.Herbicide',
+             '(Chemicals) Metrix',
+             'Lit');INSERT INTO inputs(`ID`,
+                   `INPUT_CLASS`,
+                   `NAME`,
+                   `UNIT_MEASURMEN`)
+     VALUES (9,
+             'Fertilisers.Classic',
+             '(Fertilizers) ARVI NPK 8.20.30+7S+.015',
+             'KG');INSERT INTO inputs(`ID`,
+                   `INPUT_CLASS`,
+                   `NAME`,
+                   `UNIT_MEASURMEN`)
+     VALUES (10,
+             'Fertilisers.Classic',
+             '(Fertiliser) Urea 46%N
+'             ,
+             'KG');INSERT INTO inputs(`ID`,
+                   `INPUT_CLASS`,
+                   `NAME`,
+                   `UNIT_MEASURMEN`)
+     VALUES (11,
+             'Seed.Maize',
+             '(Seeds) Maize P 8659',
+             'S.U.');COMMIT;
+

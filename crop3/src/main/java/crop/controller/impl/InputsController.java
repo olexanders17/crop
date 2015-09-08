@@ -26,12 +26,9 @@ public class InputsController {
 
 		List<Inputs> list = service.getAll();
 		model.addAttribute("inputsList", list);
-		return "inputs_getAll";
-
-		
+		return "inputs_getAll";		
 	}
 	
-
 	
 	@RequestMapping(value = "/inputsGetAllDataTable")
 	public String inputsGetAllDataTable(Model model) {
